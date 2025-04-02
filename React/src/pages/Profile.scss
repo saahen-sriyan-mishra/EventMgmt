@@ -1,0 +1,145 @@
+// Profile.scss
+
+// Variables for colors
+$primary-color: #4CAF50;
+$secondary-color: #f44336;
+$light-bg: #f9f9f9;
+$dark-text: #333;
+$light-text: #fff;
+$lighten-primary: lighten($primary-color, 35%); // Adjusted lighten value for better visibility
+
+// General styles
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $light-bg;
+  color: $dark-text;
+}
+
+h1 {
+  color: $primary-color;
+}
+
+// Centered content styling
+div {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: $primary-color;
+  color: $light-text;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+// Edit mode styling
+input[type="text"] {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid $dark-text;
+  border-radius: 5px;
+}
+
+// Table styles
+.events-table {
+  margin: 20px auto;
+  max-width: 90%;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $light-bg;
+    color: $dark-text;
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid lighten($dark-text, 10%); // Adjusted border color for better visibility
+      text-align: center;
+    }
+
+    th {
+      background-color: $primary-color;
+      color: $light-text;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: $lighten-primary; // Use the adjusted lighten value
+    }
+  }
+}
+
+// Error and validation messages
+.alert {
+  color: $secondary-color;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+
+
+// Booked table
+.booked-events-table {
+  margin: 20px auto;
+  max-width: 90%;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $light-bg;
+    color: $dark-text;
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid lighten($dark-text, 10%); // Adjusted border color for better visibility
+      text-align: center;
+    }
+
+    th {
+      background-color: $secondary-color; // Different header color to distinguish from the event table
+      color: $light-text;
+      font-weight: bold;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: $lighten-primary; // Hover effect for better interaction
+    }
+
+    .view-location-btn {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+
+    .booked-btn {
+      background-color: yellow;
+      color: #000;
+      padding: 5px 10px;
+      border: 2px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f9e26d;
+      }
+    }
+  }
+}

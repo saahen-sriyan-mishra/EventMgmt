@@ -1,0 +1,327 @@
+.vendor-att-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  
+    h1, h2, h3 {
+      color: #333;
+    }
+  
+    .back-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+  
+    .filters {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+  
+      input[type="text"] {
+        padding: 8px;
+        width: 300px;
+        margin-right: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+  
+      .theme-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+  
+        label {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  
+    .revenue-table {
+      margin: 20px 0;
+      overflow-x: auto;
+  
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  
+        th, td {
+          padding: 12px 15px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+        }
+  
+        th {
+          background-color: #f8f9fa;
+          font-weight: bold;
+          color: #000000;
+          position: sticky;
+          top: 0;
+        }
+  
+        tr:hover {
+          background-color: #f5f5f5;
+        }
+  
+        .totals-row {
+          font-weight: bold;
+          background-color: #e9f7ef;
+        }
+      }
+    }
+  
+    .availability-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+  
+      .availability-fill {
+        height: 100%;
+        background-color: #4CAF50;
+        transition: width 0.3s ease;
+      }
+  
+      .availability-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+        color: #333;
+        font-weight: bold;
+      }
+    }
+  
+    .summary-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+  
+      .stat-card {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
+        h3 {
+          margin-top: 0;
+          color: #555;
+          font-size: 16px;
+        }
+  
+        p {
+          font-size: 24px;
+          font-weight: bold;
+          margin: 10px 0 0;
+          color: #333;
+        }
+      }
+    }
+  
+    .section-header {
+      margin-top: 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #4CAF50;
+    }
+  
+    .attendee-tracker {
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+  
+    .loading, .error {
+      text-align: center;
+      padding: 40px;
+      font-size: 18px;
+    }
+  
+    .error {
+      color: #d32f2f;
+    }
+  }
+
+
+
+
+  .attendee-tracker {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
+    .event-id-search {
+      margin-bottom: 20px;
+  
+      form {
+        display: flex;
+        gap: 10px;
+  
+        input {
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          flex-grow: 1;
+          max-width: 200px;
+        }
+  
+        button {
+          padding: 8px 15px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #45a049;
+          }
+        }
+      }
+    }
+  
+    .attendees-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+  
+      th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+  
+      th {
+        background-color: #f1f1f1;
+      }
+  
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+    }
+  
+    .reminder-button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #f39c12;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #e67e22;
+      }
+    }
+  }
+
+
+  .modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid #ddd;
+  
+    .modal-header {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 15px;
+      
+      .modal-title {
+        font-size: 20px;
+        color: #333;
+        font-weight: 600;
+      }
+      
+      .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #333;
+        text-decoration: none;
+        background: transparent;
+      }
+    }
+  
+    .modal-body {
+      padding: 20px 0;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+  
+      p {
+        margin: 0;
+        font-size: 16px;
+        color: #666;
+      }
+    }
+  
+    .modal-footer {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:first-child {
+          background-color: #e0e0e0;
+          border: 1px solid #ddd;
+  
+          &:hover {
+            background-color: #ccc;
+          }
+        }
+  
+        &:last-child {
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+  
+          &:hover {
+            background-color: #45a049;
+          }
+        }
+      }
+    }
+  }
+  
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  

@@ -1,0 +1,30 @@
+@page
+@model UserLoginModel
+@{
+    ViewData["Title"] = "User Login";
+}
+
+<head>
+    <link rel="stylesheet" href="/css/userlogin.css" />
+</head>
+
+<div class="login-container">
+    <h1>User Login</h1>
+
+    <form method="post" class="login-form">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </form>
+
+    @if (Model.Message != null)
+    {
+        <p class="error-message">@Model.Message</p>
+    }
+</div>

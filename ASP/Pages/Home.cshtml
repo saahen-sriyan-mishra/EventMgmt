@@ -1,0 +1,65 @@
+@page
+@model HomeModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container">
+    <header>
+        <h1>Event Management System</h1>
+    </header>
+    <main>
+        <div class="buttons">
+            <button onclick="location.href='/UserSignup'">User Signup</button>
+            <button onclick="location.href='/UserLogin'">User Login</button>
+            <button onclick="location.href='/Admin'">Admin</button>
+        </div>
+    </main>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        text-align: center;
+        padding: 50px;
+    }
+
+    header h1 {
+        color: #333;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 18px;
+        color: #fff;
+        background: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 5px #007bff;
+    }
+</style>

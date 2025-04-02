@@ -1,0 +1,34 @@
+@page
+@model UserSignupModel
+@{
+    ViewData["Title"] = "User Signup";
+}
+
+<head>
+    <link rel="stylesheet" href="/css/usersignup.css" />
+</head>
+
+<div class="signup-container">
+    <h1>User Signup</h1>
+
+    <form method="post" class="signup-form">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required />
+        </div>
+        <button type="submit" class="signup-button">Signup</button>
+    </form>
+
+    @if (Model.Message != null)
+    {
+        <p class="error-message">@Model.Message</p>
+    }
+</div>

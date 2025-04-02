@@ -1,0 +1,12 @@
+com\pxp\SQLite\demo\entity\Event.class
+com\pxp\SQLite\demo\dto\EventDTO.class
+com\pxp\SQLite\demo\service\EventService.class
+com\pxp\SQLite\demo\dto\BookedDTO.class
+com\pxp\SQLite\demo\repository\EventRepository.class
+com\pxp\SQLite\demo\SpringBootAndSqLiteApplication.class
+com\pxp\SQLite\demo\controller\EventController.class
+com\pxp\SQLite\demo\service\BookedService.class
+com\pxp\SQLite\demo\entity\Booked.class
+com\pxp\SQLite\demo\controller\BookedController.class
+com\pxp\SQLite\demo\repository\BookedRepository.class
+com\pxp\SQLite\demo\dialect\SQLiteDialect.class

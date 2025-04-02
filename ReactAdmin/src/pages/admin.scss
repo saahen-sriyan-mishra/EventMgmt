@@ -1,0 +1,277 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$danger-color: #e74c3c;
+$dark-color: #2c3e50;
+$light-color: #ecf0f1;
+$border-color: #ddd;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$success-color: #27ae60;
+$error-color: #c0392b;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin card-style {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px $shadow-color;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+@mixin button-style {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px $shadow-color;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Base Styles
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: $dark-color;
+
+  h1, h2, h3 {
+    color: $dark-color;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-top: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}
+
+// Form Styles
+form {
+  @include card-style;
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: $dark-color;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="datetime-local"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border 0.3s;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+      }
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+  }
+}
+
+// Button Styles
+.button {
+  @include button-style;
+
+  &-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+}
+
+.update-button {
+  background-color: $primary-color;
+  color: white;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.cancel-button {
+  background-color: $light-color;
+  color: $dark-color;
+
+  &:hover {
+    background-color: darken($light-color, 10%);
+  }
+}
+
+// Tab Styles
+.tab-buttons {
+  margin: 30px 0;
+  display: flex;
+  gap: 10px;
+
+  .tab-button {
+    @include button-style;
+    background-color: $light-color;
+    color: $dark-color;
+
+    &.active {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+// Table Styles
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  @include card-style;
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+  }
+
+  th {
+    background-color: $primary-color;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  tr {
+    &:hover {
+      background-color: rgba($primary-color, 0.05);
+    }
+
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
+}
+
+.update-btn {
+  @include button-style;
+  background-color: $secondary-color;
+  color: white;
+  padding: 8px 15px;
+  font-size: 13px;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+}
+
+// Message Styles
+.success-message, .error-message {
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.success-message {
+  background-color: rgba($success-color, 0.2);
+  color: $success-color;
+  border: 1px solid $success-color;
+}
+
+.error-message {
+  background-color: rgba($error-color, 0.2);
+  color: $error-color;
+  border: 1px solid $error-color;
+}
+
+// Divider Line
+.divider-line {
+  width: 300px;
+  height: 2px;
+  background-color: $border-color;
+  margin: 20px auto;
+}
+
+// Responsive Adjustments
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+  }
+}
+
+
+
+
+.floating-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5%;
+  height: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+  }
+}

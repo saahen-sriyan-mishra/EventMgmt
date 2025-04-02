@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  react-app:
+    build:
+      context: ./react
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+      - "3001:3001"
+    volumes:
+      - ./backend:/app/backend
+    environment:
+      - DB_PATH=/app/backend/eventmanagement.db
+      - NODE_ENV=development
+    command: ["sh", "-c", "npm run dev & node server.js"]
+
+  react-admin:
+    build:
+      context: ./reactadmin
+      dockerfile: Dockerfile
+    ports:
+      - "5174:5174"
+      - "3002:3002"
+    volumes:
+      - ./backend:/app/backend
+    environment:
+      - DB_PATH=/app/backend/eventmanagement.db
+      - NODE_ENV=development
+    command: ["sh", "-c", "npm run dev & node server.js"]
+
+  asp-app:
+    build:
+      context: .
+      dockerfile: ASP/Dockerfile
+    ports:
+      - "5274:5274"
+    volumes:
+      - ./backend/EventManagement.db:/app/data/EventManagement.db
+      - ./ASP/appsettings.json:/app/appsettings.json
+    container_name: eventmgmt-app
+  spring-app:
+    build:
+      context: ./Spring
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/EventManagement.db:/app/backend/EventManagement.db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:sqlite:/app/backend/EventManagement.db
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.sqlite.JDBC
+      - SPRING_JPA_DATABASE_PLATFORM=com.pxp.SQLite.demo.dialect.SQLiteDialect
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - asp-app
+    container_name: eventmgmt-spring
