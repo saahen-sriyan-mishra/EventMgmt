@@ -6,24 +6,24 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
+// Adding services to the container
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddRazorPages();
 
-// Add controllers
+// Adding controllers
 builder.Services.AddControllers();
 
 builder.Services.AddHttpClient();
 
 
-//Error log
+//Error logging
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 
 
-// Configure JWT authentication
+// Configuring JWT authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -54,18 +54,18 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-// Use authentication and authorization middleware
+// Using authentication and authorization middleware
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Map controllers for APIs
+// Mapping controllers for APIs
 app.MapControllers();
 
 app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
 
-// Redirect the root URL to the Home Razor Page
+// Redirecting the root URL to the Home Razor Page
 app.MapGet("/", (context) =>
 {
     context.Response.Redirect("/Home");
