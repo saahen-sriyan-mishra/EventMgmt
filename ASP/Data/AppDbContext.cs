@@ -17,12 +17,12 @@ namespace ASP.Data
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Admin> Admin { get; set; } // Changed from Admins to Admin
+        public DbSet<Admin> Admin { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Explicitly map to your existing table name
-            modelBuilder.Entity<Admin>().ToTable("Admin"); // This is the critical line
+            // Explicit mapping
+            modelBuilder.Entity<Admin>().ToTable("Admin"); // Critical line
             
             modelBuilder.Entity<Admin>(entity =>
             {

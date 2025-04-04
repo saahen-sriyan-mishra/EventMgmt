@@ -50,7 +50,7 @@ namespace ASP.Controllers
         [HttpPost("admin-login")]
 public async Task<IActionResult> AdminLogin([FromBody] LoginRequest request)
 {
-    var admin = await _context.Admin // Changed from _context.Admins
+    var admin = await _context.Admin
         .FirstOrDefaultAsync(a => a.Email == request.Email);
     
     if (admin == null || !BCrypt.Net.BCrypt.Verify(request.Password, admin.Password))
