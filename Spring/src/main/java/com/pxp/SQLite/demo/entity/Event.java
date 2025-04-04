@@ -5,26 +5,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Events")  // Explicitly map to the Events table
+@Table(name = "Events")
 public class Event {
 
     @Id
-    private int eventid;  // Event ID
-
-    private String name;  // Event name
-
-    private String theme;  // Event theme
-
-    private String description;  // Event description
-
-    private int maxCapacity;  // Maximum allowed attendees
-
-    private int currentCapacity;  // Current number of attendees
-
-    private int ticketPrice;  // Price per ticket
-
-    private String eventDatetime;  // Event date and time
-
+    private int eventid; 
+    private String name;
+    private String theme;
+    private String description;
+    private int maxCapacity;
+    private int currentCapacity;
+    private int ticketPrice;
+    private String eventDatetime;
+    
     // Default constructor
     public Event() {
     }
@@ -94,7 +87,7 @@ public class Event {
         this.eventDatetime = eventDatetime;
     }
 
-    // Optional: Override toString method for better debugging/logging
+
     @Override
     public String toString() {
         return "Event{" +

@@ -23,7 +23,7 @@ public class EventDTO {
         this.eventDatetime = eventDatetime;
     }
 
-    // Getters and setters (or use Lombok for brevity if you prefer)
+    // Getters and setters
     public int getEventid() {
         return eventid;
     }

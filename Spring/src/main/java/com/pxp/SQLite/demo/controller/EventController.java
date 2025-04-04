@@ -12,7 +12,7 @@ import com.pxp.SQLite.demo.dto.EventDTO;
 import com.pxp.SQLite.demo.service.EventService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5174") // Add this line
+@CrossOrigin(origins = "http://localhost:5174") // Added for fetch
 public class EventController {
 
     @Autowired

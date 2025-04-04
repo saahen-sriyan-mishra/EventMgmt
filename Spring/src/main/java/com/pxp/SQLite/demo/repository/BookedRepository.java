@@ -7,5 +7,5 @@ import com.pxp.SQLite.demo.entity.Booked;
 
 @Repository
 public interface BookedRepository extends JpaRepository<Booked, Integer> {
-    // Custom queries can be added here if needed
+
 }
