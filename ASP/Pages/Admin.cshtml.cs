@@ -14,7 +14,7 @@ namespace ASP.Pages
         private readonly IConfiguration _config;
         private readonly IHttpClientFactory _httpClientFactory;
 
-        // Updated constructor with proper injection
+        // Updated Constructor
         public AdminModel(
             ILogger<AdminModel> logger, 
             IConfiguration config,
