@@ -17,7 +17,7 @@ const Profile = () => {
   const [selectedThemes, setSelectedThemes] = useState([]);
   const [uniqueThemes, setUniqueThemes] = useState([]);
 
-  // State to store the selected event ID
+  // State to store selected event ID
   const [selectedEventId, setSelectedEventId] = useState(null);
 
   //Location/Venue
