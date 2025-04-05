@@ -1,4 +1,4 @@
-change the 10th line in appsettings.joson to
+change the 10th line in appsettings.json to
   "DefaultConnection": "Data Source=../Backend/EventManagement.db" 
   for using manual setup
 
