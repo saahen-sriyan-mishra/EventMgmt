@@ -1,0 +1,9 @@
+change the 10th line in appsettings.joson to
+  "DefaultConnection": "Data Source=../Backend/EventManagement.db" 
+  for using manual setup
+
+  and back to
+
+      "DefaultConnection": "Data Source=/app/data/EventManagement.db" 
+
+      to use docker setup
