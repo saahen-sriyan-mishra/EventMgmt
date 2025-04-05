@@ -356,3 +356,4 @@ C:\Users\KIIT\Desktop\EventMgmt\ASP\obj\Debug\net9.0\compressed\viken71cyk-wfomx
 C:\Users\KIIT\Desktop\EventMgmt\ASP\obj\Debug\net9.0\compressed\ohgrlz8z6z-wfomx4yn1s.gz
 C:\Users\KIIT\Desktop\EventMgmt\ASP\obj\Debug\net9.0\compressed\84adg7brio-6v5mrxth6h.gz
 C:\Users\KIIT\Desktop\EventMgmt\ASP\obj\Debug\net9.0\compressed\wj3w3hnm2m-h9fslqmb4z.gz
+C:\Users\KIIT\Desktop\EventMgmt\ASP\obj\Debug\net9.0\ASP.sourcelink.json
