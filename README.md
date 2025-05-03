@@ -2,6 +2,38 @@
 
 This full-stack Event Management application is developed using ASP.NET, React, Node.js, and Spring Boot, codded in C#, JavaScript, and Java.
 
+- [Full-stack Event Management application](#full-stack-event-management-application)
+  - [Key Features:](#key-features)
+  - [Tech Stack Used](#tech-stack-used)
+  - [1. Sign-up and Login Module (Backend Endpoints, URLs and Application UI)](#1-sign-up-and-login-module-backend-endpoints-urls-and-application-ui)
+    - [Technical Highlights](#technical-highlights)
+    - [Application URLs](#application-urls)
+    - [Application UI](#application-ui)
+  - [2. User Module Features  (Backend Endpoints, URLs and Application UI)](#2-user-module-features--backend-endpoints-urls-and-application-ui)
+    - [Technical Highlight](#technical-highlight)
+    - [Technical Framework Summary](#technical-framework-summary)
+    - [Application URLs](#application-urls-1)
+    - [Application UI](#application-ui-1)
+  - [3. Admin Module Features (Backend Endpoints, URLs and Application UI)](#3-admin-module-features-backend-endpoints-urls-and-application-ui)
+    - [Frontend Functionalities](#frontend-functionalities)
+    - [Application URLs](#application-urls-2)
+    - [Application UI](#application-ui-2)
+  - [SQLite Integration with Spring Boot](#sqlite-integration-with-spring-boot)
+    - [Backend Architecture](#backend-architecture)
+  - [ER Diagram](#er-diagram)
+    - [Tables and Their Attributes](#tables-and-their-attributes)
+    - [Database Schema](#database-schema)
+    - [Relationships and Logic](#relationships-and-logic)
+    - [Relationship Logic and Usage](#relationship-logic-and-usage)
+  - [Flow Documentation](#flow-documentation)
+    - [1. User Interaction Flow](#1-user-interaction-flow)
+    - [2. Admin Interaction Flow](#2-admin-interaction-flow)
+  - [Dockerization](#dockerization)
+  - [Application Deployment \& Usage Guide](#application-deployment--usage-guide)
+    - [**Usage Option 1: Dockerized Deployment**](#usage-option-1-dockerized-deployment)
+    - [**Usage Option 2: Manual Deployment**](#usage-option-2-manual-deployment)
+    - [**Usage Option 3: Hybrid Deployment**](#usage-option-3-hybrid-deployment)
+
 
 ## Key Features:
 
@@ -268,7 +300,7 @@ SQLite integration with Spring Boot necessitated the implementation of custom di
 | **Venue Management** | - Admin assigns or edits venue details (place name and coordinates). | - Venue updates are reflected in the linked `Location` table. | ```PUT /api/venues/:id``` |
 | **Vendor & Attendee Dashboard** | - Admin views revenue, ticket stats, and capacity usage.<br>- Can search events and view attendee details. | - Metrics and attendee information are dynamically shown.<br>- Email reminders can be sent to attendees. | - Fetch metrics: ```GET /getevents```<br>- Fetch attendee list: ```GET /getbooked```<br>- Email reminder logic is triggered via confirmation modal. |
 
-### 3. Dockerization
+## Dockerization
 
 | **Service**       | **Purpose** | **Features** |
 |------------------|------------|-------------|
