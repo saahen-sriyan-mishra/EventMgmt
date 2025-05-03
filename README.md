@@ -94,10 +94,10 @@ This application consists of three modules, including the module for user login 
 
 | Image | Description |
 |-------|------------|
-| ![Figure 1](Images/1.1.png) | **Figure 1: Initial page on opening the application** |
-| ![Figure 2](Images/1.2.png) | **Figure 2: User Signup** |
-| ![Figure 3](Images/1.3.png) | **Figure 3: User Login** |
-| ![Figure 4](Images/1.4.png) | **Figure 4: Admin login** |
+| ![Initial page on opening the application](Images/1.1.png) | **Initial page on opening the application** |
+| ![User Signup](Images/1.2.png) | **User Signup** |
+| ![User Login](Images/1.3.png) | **User Login** |
+| ![Admin login](Images/1.4.png) | **Admin login** |
  
 
 ---
@@ -151,13 +151,13 @@ Email is the user email given during the time of signup.
 
 | Image | Description |
 |-------|------------|
-| ![Figure 5](Images/2.1.png) | **Figure 5: Page a new user sees.** |
-| ![Figure 6](Images/2.2.png) | **Figure 6: Page after editing profile, changing names, and booking events.** |
-| ![Figure 7](Images/2.3.png) | **Figure 7: Images showing edit user profile functionality.** |
-| ![Figure 8](Images/2.4.png) | **Figure 8: Images showing a list of all available events.** |
-| ![Figure 9](Images/2.5.png) | **Figure 9: Images showing a dialogue box for payment confirmation for event booking.** |
-| ![Figure 10](Images/2.6.png) | **Figure 10: Images showing search by event feature.** |
-| ![Figure 11](Images/2.7.png) | **Figure 11: Images showing filter by theme feature.** |
+| ![Page a new user sees](Images/2.1.png) | **Page a new user sees.** |
+| ![Page after editing profile, changing names, and booking events](Images/2.2.png) | **Page after editing profile, changing names, and booking events.** |
+| ![Images showing edit user profile functionality](Images/2.3.png) | **Images showing edit user profile functionality.** |
+| ![Images showing a list of all available events](Images/2.4.png) | **Images showing a list of all available events.** |
+| ![Images showing a dialogue box for payment confirmation for event booking](Images/2.5.png) | **Images showing a dialogue box for payment confirmation for event booking.** |
+| ![Images showing search by event feature](Images/2.6.png) | **Images showing search by event feature.** |
+| ![Images showing filter by theme feature](Images/2.7.png) | **Images showing filter by theme feature.** |
 
 ---
 
@@ -191,16 +191,16 @@ Email is the user email given during the time of signup.
 
 | Image | Description |
 |-------|------------|
-| ![Figure 12](Images/3.1.png) | **Figure 12: Create Event Form.** |
-| ![Figure 13](Images/3.2.png) | **Figure 13: Event list table.** |
-| ![Figure 14](Images/3.3.png) | **Figure 14: Event form loaded with event data to be edited.** |
-| ![Figure 15](Images/3.4.png) | **Figure 15: Venue list table.** |
-| ![Figure 16](Images/3.5.png) | **Figure 16: Venue list table with edit venue form.** |
-| ![Figure 17](Images/3.6.png) | **Figure 17: Vendor Dashboard.** |
-| ![Figure 18](Images/3.7.png) | **Figure 18: Vendor Dashboard’s search event by name functionality.** |
-| ![Figure 19](Images/3.8.png) | **Figure 19: Vendor Dashboard’s filter by theme functionality.** |
-| ![Figure 20](Images/3.9.png) | **Figure 20: Attendee management Tracker list.** |
-| ![Figure 21](Images/3.10.png) | **Figure 21: Attendee management Tracker list’s email reminder dialogue box.** |
+| ![Create Event Form](Images/3.1.png) | **Create Event Form.** |
+| ![Event list table](Images/3.2.png) | **Event list table.** |
+| ![Event form loaded with event data to be edited](Images/3.3.png) | **Event form loaded with event data to be edited.** |
+| ![Venue list table](Images/3.4.png) | **Venue list table.** |
+| ![Venue list table with edit venue form](Images/3.5.png) | **Venue list table with edit venue form.** |
+| ![Vendor Dashboard](Images/3.6.png) | **Vendor Dashboard.** |
+| ![Vendor Dashboard’s search event by name functionality](Images/3.7.png) | **Vendor Dashboard’s search event by name functionality.** |
+| ![Vendor Dashboard’s filter by theme functionality](Images/3.8.png) | **Vendor Dashboard’s filter by theme functionality.** |
+| ![Attendee management Tracker list](Images/3.9.png) | **Attendee management Tracker list.** |
+| ![Attendee management Tracker list’s email reminder dialogue box](Images/3.10.png) | **Attendee management Tracker list’s email reminder dialogue box.** |
 
 ---
 
@@ -253,8 +253,7 @@ SQLite integration with Spring Boot necessitated the implementation of custom di
 |                | latitude           | Real, default value `0.000000`. Geographical latitude of the venue. |
 |                | eventid            | Integer, foreign key referencing `Events.eventid`. Links the venue to the event. |
 
-![Figure 22](Images/4.png)  <br> 
-**Figure 22: ER Diagram of the application**
+![ER Diagram of the application](Images/4.png)  <br> 
 
 
 ### Relationship, Logic and Usage
@@ -305,10 +304,10 @@ SQLite integration with Spring Boot necessitated the implementation of custom di
 
 | Image | Description |
 |-------|------------|
-| ![Figure 23](Images/5.1.png) | **Figure 23: Docker Compose build process.** |
-| ![Figure 24](Images/5.2.png) | **Figure 24: Docker images after build (Docker UI).** |
-| ![Figure 25](Images/5.3.png) | **Figure 25: Docker images after build (Terminal).** |
-| ![Figure 26](Images/5.4.png) | **Figure 26: Running containers with port mappings.** |
+| ![Docker Compose build process](Images/5.1.png) | **Docker Compose build process.** |
+| ![Docker images after build (Docker UI)](Images/5.2.png) | **Docker images after build (Docker UI).** |
+| ![Docker images after build (Terminal)](Images/5.3.png) | **Docker images after build (Terminal).** |
+| ![Running containers with port mappings](Images/5.4.png) | **Running containers with port mappings.** |
 
 ---
 
