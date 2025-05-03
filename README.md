@@ -92,17 +92,17 @@ This application consists of three modules, including the module for user login 
 
 ### Application UI
 
-![](Images/1.1.png)
-**Figure 1: Initial page on opening the application**
+![**Figure 1: Initial page on opening the application**](Images/1.1.png)  
 
-![](Images/1.2.png)
-**Figure 2: User Signup**
 
-![](Images/1.3.png)
-**Figure 3: User Login**  
+![**Figure 2: User Signup**](Images/1.2.png)  
 
-![](Images/1.4.png)
-**Figure 4: Admin login**  
+
+![**Figure 3: User Login**](Images/1.3.png)  
+ 
+
+![**Figure 4: Admin login**](Images/1.4.png)  
+ 
 
 ---
 
