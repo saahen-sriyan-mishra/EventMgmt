@@ -1,20 +1,9 @@
 # Full-stack Event Management application
 
-### Technologies and Platforms Used: ASP.NET, React, Node.js, and Spring Boot, SQLite, Docker and VS Code.
-### Language: C#, JavaScript, and Java. 
+This full-stack Event Management application is developed using ASP.NET, React, Node.js, and Spring Boot, codded in C#, JavaScript, and Java.
 
-## Issues identified and solved
 
-This full-stack Event Management application is developed using ASP.NET, React, Node.js, and Spring Boot, codded in C#, JavaScript, and Java. It serves as an innovative solution to address critical challenges faced by EventZen, an event planning company.
-
-**Issues Identified:**
-
-- Manual Event Scheduling: Time-consuming and prone to errors when scheduling events, managing venue bookings, and coordinating with vendors.
-- Inefficient Attendee Management: Difficulty tracking registrations, managing guest lists, and sending event invitations and reminders efficiently
-- Complex Budget Tracking: Challenges in managing budgets, tracking expenses, and generating detailed financial reports
-- Limited Customer Engagement: Lack of a user-friendly platform for customers to view event details, make bookings, and receive updates.
-
-**How This Application Solves These Challenges:**
+## Key Features:
 
 - Streamlined Event Scheduling: The application automates scheduling, integrating vendor bookings, venue management, and notifications into a cohesive workflow
 - Optimized Attendee Management: It includes features to handle registrations, guest lists, and automated communication for reminders and updates, ensuring efficient attendee handling.
@@ -23,7 +12,14 @@ This full-stack Event Management application is developed using ASP.NET, React, 
 
 ## Tech Stack Used
 
-This application consists of two modules, excluding the module for user login and authentication: the User Module and the Admin Module. The user signup, login, and admin login functionalities are handled using ASP.NET, coded in C#. The User Module primarily includes features for user profile management, event booking, viewing confirmed bookings, and venue viewing. These functionalities are coded in JavaScript, utilizing React for the frontend and Node.js for the backend server. The Admin Module includes features such as event management, venue management, vendor and budget management, and attendee management for capacity monitoring and event reminders. This module is coded in JavaScript and Java, with React for the frontend and a combination of Node.js and Spring Boot for the backend. The database choice is SQLite, selected for its lightweight design, fast performance and simplicity.
+This application consists of three modules, including the module for user login and authentication, the User Module and the Admin Module. 
+
+| Component       | Technology               |
+|-----------------|--------------------------|
+| Frontend        | React, ASP.NET (Razor Pages)                    |
+| Backend         | Node.js, ASP.NET, Spring Boot with Maven|
+| Database        | SQLite                   |
+| Authentication  | JWT with BCrypt hashing  |
 
  
 ## 1. Modules, Application UI, URLs and Backend Endpoints for Sign-up and Login Module
@@ -276,363 +272,332 @@ Each event is assigned a specific venue. The relationship is established via the
 
 **Logic:** The app associates each event with one venue, storing venue details like name, coordinates, and datetime in the Location table.
 
-## Flow documentation
+Here's your entire documentation rewritten in a polished **Markdown format (`.md`)** with proper headings, bolding, inline code blocks, and numbered sections where appropriate. You can paste this into any `.md` file, such as a `README.md`.
 
-### User Flow
+## Flow Documentation
 
-**User Signup**
+### 1. User Flow
 
-- **Action:**
-
-The user visits the signup page and fills in their email and password.
-
-They confirm the password to ensure accuracy.
-
-- **Outcome:**
-
-The backend validates the data and checks for duplicate emails in the database.
-
-A hashed password is stored in the database, and the user is redirected to the login page.
-
-- **Technical Highlights:**
-
-POST /api/auth/signup endpoint handles the signup process.
-
-Passwords are hashed using BCrypt for security.
-
-**User Login**
+#### 1.1 **User Signup**
 
 - **Action:**
-
-The user enters their email and password on the login page and submits the form.
+  - The user visits the signup page and fills in their email and password.
+  - Confirms the password to ensure accuracy.
 
 - **Outcome:**
-
-Backend verifies the credentials against the database.
-
-On successful login, a JWT token is generated and stored.
-
-The user is redirected to their personal profile page with access to application features.
+  - Backend validates input and checks for duplicate emails.
+  - Password is hashed using `BCrypt` and stored securely.
+  - User is redirected to the login page.
 
 - **Technical Highlights:**
+  - Endpoint:  
+    ```bash
+    POST /api/auth/signup
+    ```
 
-POST /api/auth/login endpoint authenticates the user.
+---
 
-JWT tokens are generated to manage user sessions securely.
-
-**Browsing Events  
-**
+#### 1.2 **User Login**
 
 - **Action:**
-
-Users browse the list of events displayed on the main dashboard.
-
-They can filter events by name (search bar) or theme (checkboxes).
+  - The user enters their email and password and submits the login form.
 
 - **Outcome:**
-
-Users view detailed event information, including name, theme, description, date, time, venue, ticket price, and availability status.
+  - Backend verifies credentials.
+  - On success, a JWT token is generated and stored.
+  - User is redirected to their personal dashboard.
 
 - **Technical Highlights:**
+  - Endpoint:  
+    ```bash
+    POST /api/auth/login
+    ```
 
-GET /api/events endpoint retrieves all event details from the backend.
+---
 
-React dynamically updates the event list based on the filters applied.
-
-**Booking an Event  
-**
+#### 1.3 **Browsing Events**
 
 - **Action:**
-
-The user selects an event and clicks the “Book Event” button.  
-A payment confirmation window appears for the user to confirm their booking.
+  - Users browse the event list on the main dashboard.
+  - Events can be filtered by **name** (search bar) or **theme** (checkboxes).
 
 - **Outcome:**
-
-Once confirmed, the event is added to the user’s "Confirmed Events" section.
-
-Users can book multiple tickets for an event.
+  - Events are displayed with details: name, theme, description, datetime, venue, ticket price, availability.
 
 - **Technical Highlights:**
+  - Endpoint:  
+    ```bash
+    GET /api/events
+    ```
 
-POST /api/book-event endpoint processes bookings, validates capacity, and updates database tables for bookings and event capacity.
+---
 
-**Viewing Booked Events  
-**
+#### 1.4 **Booking an Event**
 
 - **Action:**
-
-Users visit their profile page to see a list of all events they’ve booked.
+  - User clicks on the "Book Event" button for a selected event.
+  - A confirmation popup appears to confirm booking.
 
 - **Outcome:**
-
-Events display relevant details like name, theme, date, venue, and the number of tickets booked.
+  - On confirmation, event is added to user’s "Confirmed Events".
+  - Multiple tickets can be booked.
 
 - **Technical Highlights:**
+  - Endpoint:  
+    ```bash
+    POST /api/book-event
+    ```
 
-GET /api/booked-events/:email endpoint fetches all bookings for the user based on their email.
+---
 
-### Admin Flow
-
-**Admin Login**
+#### 1.5 **Viewing Booked Events**
 
 - **Action:**
-
-Admin enters their email and password on the admin login page.
+  - User navigates to their profile page.
 
 - **Outcome:**
-
-Upon successful verification, an admin-specific JWT token is generated.
-
-Admin is redirected to the admin dashboard.
+  - List of booked events is displayed with name, theme, date, venue, and number of tickets.
 
 - **Technical Highlights:**
+  - Endpoint:  
+    ```bash
+    GET /api/booked-events/:email
+    ```
 
-POST /api/auth/admin-login endpoint authenticates admin users.
+---
 
-**Creating New Events**
+### 2. Admin Flow
+
+#### 2.1 **Admin Login**
 
 - **Action:**
-
-Admin fills out a form to create a new event with details such as name, description, theme, date, time, capacity, and ticket price.
+  - Admin provides credentials on login page.
 
 - **Outcome:**
-
-The event is added to the database and visible in both the admin and user dashboards.
+  - JWT token is generated upon successful login.
+  - Admin is redirected to the dashboard.
 
 - **Technical Highlights:**
+  - Endpoint:  
+    ```bash
+    POST /api/auth/admin-login
+    ```
 
-POST /api/events endpoint saves event details to the Events table in the database.
+---
 
-**Editing Events**
+#### 2.2 **Creating New Events**
 
 - **Action:**
-
-Admin clicks an "Edit" button beside an event to update its details.
-
-Event data is preloaded into the form for editing.
+  - Admin fills form to create event with name, description, theme, datetime, capacity, price.
 
 - **Outcome:**
-
-Changes are saved to the database, and the updated event details are displayed dynamically.
+  - Event is saved and visible in both admin and user dashboards.
 
 - **Technical Highlights:**
+  - Endpoint:  
+    ```bash
+    POST /api/events
+    ```
 
-PUT /api/events/:id endpoint updates event details in the database.
+---
 
-**Venue Management**
+#### 2.3 **Editing Events**
 
 - **Action:**
-
-Admin selects an event and assigns a venue (place name and coordinates).
-
-Venue details can also be edited later.
+  - Admin clicks "Edit" beside an event and modifies details.
 
 - **Outcome:**
-
-Venue details are updated in the Location table, linking them to the corresponding event.
+  - Database is updated and UI reflects changes dynamically.
 
 - **Technical Highlights:**
+  - Endpoint:  
+    ```bash
+    PUT /api/events/:id
+    ```
 
-PUT /api/venues/:id endpoint updates venue information.
+---
 
-**Vendor and Attendee Dashboard**
+#### 2.4 **Venue Management**
 
 - **Action:**
-
-Admin views metrics such as total revenue, average ticket price, and capacity utilization for all events.
-
-Admin searches events using filters and tracks attendee details.
+  - Admin assigns or edits venue details (place name and coordinates).
 
 - **Outcome:**
-
-Metrics are calculated and displayed dynamically.
-
-Admin can send email reminders to attendees for specific events.
+  - Venue updates are reflected in the linked `Location` table.
 
 - **Technical Highlights:**
+  - Endpoint:  
+    ```bash
+    PUT /api/venues/:id
+    ```
 
-GET /getevents retrieves data for revenue and availability metrics.
+---
 
-GET /getbooked fetches attendee details for specific events.
+#### 2.5 **Vendor & Attendee Dashboard**
 
-- **Email Reminders:**
+- **Action:**
+  - Admin views revenue, ticket stats, capacity usage.
+  - Can search events and view attendee details.
 
-Custom modal confirmation interface triggers Backend logic for sending bulk emails to attendees.
+- **Outcome:**
+  - Metrics and attendee information are dynamically shown.
+  - Email reminders can be sent to attendees.
 
-## Dockerization
+- **Technical Highlights:**
+  - Fetch metrics:  
+    ```bash
+    GET /getevents
+    ```
+  - Fetch attendee list:  
+    ```bash
+    GET /getbooked
+    ```
+  - Email reminder logic is triggered via confirmation modal.
 
-**Structure of Docker Files**
+---
 
-In this project, each major component (ASP.NET Core, React, React Admin, and Spring Boot) has its own Dockerfile located within their respective subdirectories. These Dockerfiles handle the specific dependencies and build configurations required for each component. Below is an overview of how each Dockerfile contributes:  
+### 3. Dockerization
 
-### ASP.NET Core (asp):
+#### 3.1 **Structure Overview**
 
-- **Purpose:** Builds and runs the ASP.NET backend.
-- **Key Steps:**
+Each service (ASP.NET, React, React Admin, Spring Boot) has its own `Dockerfile`.
 
-Builds the application using the mcr.microsoft.com/dotnet/sdk image.
+---
 
-Publishes the application in a release configuration.
+#### 3.2 **ASP.NET Core (`asp`)**
 
-Runs the application in a lightweight runtime image (aspnet).
-
+- **Purpose:** Hosts ASP.NET backend.
 - **Features:**
+  - Uses `mcr.microsoft.com/dotnet/sdk` for build.
+  - Publishes to a lightweight runtime image.
+  - Exposes port `5274`.
 
-Creates a data directory for SQLite.
+---
 
-Exposes port 5274 to allow communication.
+#### 3.3 **React User Interface (`react`)**
 
-### React User Interface (react):
-
-- **Purpose:** Builds and serves the user-facing React application.
-- **Key Steps:**
-
-Installs Node.js dependencies.
-
-Copies source files and prepares the environment (sets up DB_PATH).
-
-Starts the development server for both frontend and backend services.
-
+- **Purpose:** Hosts the frontend user interface.
 - **Features:**
+  - Installs Node.js deps, copies source, sets env.
+  - Exposes ports `5173` (frontend), `3001` (backend).
 
-Exposes ports 5173 (frontend) and 3001 (backend).
+---
 
-Works seamlessly with SQLite for data storage.
+#### 3.4 **React Admin Interface (`react-admin`)**
 
-## React Admin Interface (react-admin):
-
-- **Purpose:** Handles the admin-facing React application with similar configurations to the user-facing app.
-- **Key Steps:**
-
-Installs necessary Node.js dependencies.
-
-Prepares the environment (DB_PATH and NODE_ENV).
-
-Starts the development server.
-
+- **Purpose:** Admin-facing frontend.
 - **Features:**
+  - Exposes ports `5174` (frontend), `3002` (backend).
 
-Exposes ports 5174 (frontend) and 3002 (backend).
+---
 
-## Spring Boot Backend (spring):
+#### 3.5 **Spring Boot Backend (`spring`)**
 
-- **Purpose:** Runs the Spring Boot backend for admin functionalities.
-- **Key Steps:**
-
-Prepares dependencies using Maven (dependency:go-offline).
-
-Sets up environment variables for SQLite integration (SPRING_DATASOURCE_URL, custom SQLiteDialect for Hibernate).
-
-Exposes port 8080 for communication with other components.
-
+- **Purpose:** Hosts admin functionality.
 - **Features:**
+  - Uses Maven with SQLite integration.
+  - Exposes port `8080`.
 
-Handles data persistence via SQLite.
+---
 
-Uses Spring JPA with custom configurations for seamless database management.
+#### 3.6 **Visual Overview**
 
+- **Figure 36:** Docker Compose build process.
+- **Figure 37:** Docker images after build (Docker UI).
+- **Figure 38:** Docker images after build (Terminal).
+- **Figure 39:** Running containers with port mappings.
 
-**Figure 36:** Building of docker-compose  
+---
 
-
-**Figure 37:** Created docker Images after the build is over shown in docker  
-
-
-**Figure 38:** Created docker Images after the build is over shown in terminal
-
-
-**Figure 39:** Image showing running containers and ports which they are using.
-
-## Additional note (Application Deployment and Usage Guide):
+## Application Deployment & Usage Guide
 
 **GitHub Repository**
 
-The application has been uploaded to GitHub with all its dependencies, including the Docker files and docker-compose.yml.  
-This ensures accessibility as the repository serves as a central location for downloading the entire project and its dependencies, simplifying the setup process.
+- Project is uploaded to GitHub with all `Dockerfile`s and `docker-compose.yml`.
+- Simplifies full setup and deployment.
 
+---
 
+### **Usage Option 1: Dockerized Deployment**
 
-### Usage Option 1: Dockerized Deployment  
+- Navigate to the project root:
 
-**To deploy the application using Docker:**
+```bash
+docker-compose up --build
+```
 
-- Navigate to the root directory (eventmgmt) and execute the following command:
+* Builds and starts:
 
-**docker-compose up --build**
+  * ASP.NET backend
+  * Node.js backend
+  * Spring Boot backend
+  * React UIs
 
-**This command builds Docker images for each component defined in the docker-compose.yml file:**
+---
 
-- ASP.NET and Node.js backend (live setup): Handles real-time requests and transactions.
-- Spring Boot backend (snapshot setup): This snapshot setup ensures stability for admin functionalities while testing, as changes are staged and not live immediately.
-- Wait for the execution to complete. Once finished, the application is ready for use.
+### **Usage Option 2: Manual Deployment**
 
- 
-### Usage Option 2: Manual Deployment    
+**Terminal 1: ASP.NET**
 
-**To run the application manually:**
+```bash
+cd asp
+dotnet run
+```
 
-- Open seven six and navigate to the root directory in each.
-- Execute the following commands in order:
+Ensure you update `appsettings.json` connection string to:
 
-**Terminal 1:**
+```json
+"DefaultConnection": "Data Source=../Backend/EventManagement.db"
+```
 
-Before running the command, update the connection string in appsettings.json:  
-From "DefaultConnection": "Data Source=/app/data/EventManagement.db"
+**Terminal 2: React Frontend**
 
-To "DefaultConnection": "Data Source=../Backend/EventManagement.db"
+```bash
+cd react
+npm run dev
+```
 
-**cd asp**
+**Terminal 3: React Backend**
 
-**dotnet run**
+```bash
+cd react
+node server.js
+```
 
-Once completed, revert the connection string for Docker deployment:
+**Terminal 4: React Admin Frontend**
 
-**Terminal 2:**
+```bash
+cd reactadmin
+npm run dev
+```
 
-**cd react**
+**Terminal 5: React Admin Backend**
 
-**npm run dev**
+```bash
+cd reactadmin
+node server.js
+```
 
-**Terminal 3:**
+**Terminal 6: Spring Boot Backend**
 
-**cd react**
+```bash
+cd spring
+mvn spring-boot:run
+```
 
-**node server.js**
+---
 
-**Terminal 4:**
+### **Usage Option 3: Hybrid Deployment**
 
-**cd reactadmin**
+* Build selected images (React, Admin, ASP):
 
-**npm run dev**
+```bash
+docker-compose up react-app react-admin asp-app --build
+```
 
-**Terminal 5:**
+* Run Spring Boot manually:
 
-**cd reactadmin**
-
-**node server.js**
-
-**Terminal 6:**
-
-**cd spring**
-
-**mvn spring-boot:run**
-
-### Usage Option 3: Hybrid Deployment
-
-**For a hybrid setup:**
-
-- Build only the ASP.NET, React, and React Admin images by referring to the commands in docker-compose.yml.
-
-**Command:**
-
-**docker-compose up react-app react-admin asp-app --build**
-
-- Navigate to the spring directory in another terminal and run the Spring Boot backend manually:
-
-**mvn spring-boot:run**
-
-All backend components share a live database, ensuring real-time updates across services.
-
-## Conclusion  
-This full-stack web application for EventZen offers a proper solution to address the inefficiencies and challenges faced by the company. By automating event scheduling, optimizing attendee management, streamlining budget tracking, and enhancing customer engagement, the application transforms EventZen's operations into an efficient system. The integration of React, Node.js, Spring Boot, and ASP.NET ensures a scalable and user-friendly platform that caters to both admin and customer needs..
+```bash
+cd spring
+mvn spring-boot:run
+```
