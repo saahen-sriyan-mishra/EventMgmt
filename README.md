@@ -22,7 +22,7 @@ This application consists of three modules, including the module for user login 
 | Authentication  | JWT with BCrypt hashing  |
 
  
-## 1. Modules, Application UI, URLs and Backend Endpoints for Sign-up and Login Module
+## 1. Sign-up and Login Module (Backend Endpoints, URLs and Application UI)
 
 | **Module**            | **Features**                                                                                                                                                                                                                      | **Backend Endpoints**                                                                                                                                                                                                                                                                                                                                                             |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -34,23 +34,12 @@ This application consists of three modules, including the module for user login 
 
 ### Technical Highlights
 
-**Security Implementation**:
-
-- Passwords are securely hashed using **BCrypt**, ensuring stored credentials cannot be reversed.
-- JWT tokens are signed using **HMAC-SHA256** and include embedded claims, ensuring secure and verifiable session handling.
-
-**Database Interaction**:
-
-- Efficient queries (SELECT, INSERT) are utilized for user and admin authentication processes.
-- Ensures email uniqueness via HasIndex constraints on the **Users** and **Admin** tables.
-
-**Role-Based Access**:
-
-- Role-specific claims (User/Admin) are embedded in JWT tokens, enabling differentiation in session functionalities.
-
-**Frontend Integration**:
-
-- Upon successful login/signup, users are redirected to their respective pages (User Profile or Admin Functionality) seamlessly.
+| **Category**            | **Details** |
+|------------------------|------------|
+| **Security Implementation** | - Passwords are securely hashed using **BCrypt**, ensuring stored credentials cannot be reversed.<br>- JWT tokens are signed using **HMAC-SHA256** and include embedded claims, ensuring secure and verifiable session handling. |
+| **Database Interaction** | - Efficient queries (SELECT, INSERT) are utilized for user and admin authentication processes.<br>- Ensures email uniqueness via HasIndex constraints on the **Users** and **Admin** tables. |
+| **Role-Based Access** | - Role-specific claims (User/Admin) are embedded in JWT tokens, enabling differentiation in session functionalities. |
+| **Frontend Integration** | - Upon successful login/signup, users are redirected to their respective pages (User Profile or Admin Functionality) seamlessly. |
 
 ### Application URLs
 
@@ -74,7 +63,7 @@ This application consists of three modules, including the module for user login 
 **Figure 4: Admin login**  
 
 
-## 2. Modules, Application UI, URLs and Backend Endpoints for User Module Features  
+## 2. User Module Features  (Backend Endpoints, URLs and Application UI)
 
 
 | **Module**                      | **Features**                                                                                                                                                                                                                                                                                             | **Backend Endpoints**                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -87,21 +76,24 @@ This application consists of three modules, including the module for user login 
 
 
 
-### Technical Highlight:
 
-**Input Validation**: Each endpoint includes input validation for user-provided data (e.g., checking if username is empty in PUT /api/username/:email or ensuring valid eventId in POST /api/book-event).  
 
-**Error Handling**: Robust error handling ensures that database errors, invalid inputs, or unforeseen issues are gracefully managed with meaningful HTTP response codes (e.g., 404 Not Found, 400 Bad Request, 500 Internal Server Error).  
+### Technical Highlight
 
-**Dynamic Updates**: Real-time updates for event capacities and user bookings enhance the seamlessness of the application workflow.
+| **Category**            | **Details** |
+|------------------------|------------|
+| **Input Validation** | - Each endpoint includes input validation for user-provided data.<br>- Example: Checking if username is empty in `PUT /api/username/:email` or ensuring valid `eventId` in `POST /api/book-event`. |
+| **Error Handling** | - Robust error handling ensures that database errors, invalid inputs, or unforeseen issues are gracefully managed.<br>- Meaningful HTTP response codes are used (e.g., `404 Not Found`, `400 Bad Request`, `500 Internal Server Error`). |
+| **Dynamic Updates** | - Real-time updates for event capacities.<br>- User bookings enhancing the seamlessness of the application workflow. |
 
-#### Technical Framework Summary:
+### Technical Framework Summary
 
-**Frontend**: React ensures an interactive and responsive user interface for features like personalized greetings, event browsing, filtering, and booking.
+| **Category**            | **Details** |
+|------------------------|------------|
+| **Frontend** | - React ensures an interactive and responsive user interface.<br>- Features include personalized greetings, event browsing, filtering, and booking. |
+| **Backend** | - Express facilitates robust API endpoints.<br>- Connects the frontend with the SQLite database for real-time data fetching and updates. |
+| **Database Operations** | - SQLite handles efficient storage and retrieval of user, event, and booking data.<br>- Operations include `SELECT` (retrieving data), `INSERT` (new records), and `UPDATE` (modifying existing records) for synchronized functionality. |
 
-**Backend**: Express facilitates robust API endpoints, connecting the frontend with the SQLite database for real-time data fetching and updates.
-
-**Database Operations**: SQLite handles efficient storage and retrieval of user, event, and booking data. Database operations include SELECT (for retrieving data), INSERT (for new records), and UPDATE (for modifying existing records), ensuring smooth and synchronized functionality.
 
 ### Application URLs
 
@@ -120,19 +112,19 @@ Email is the user email given during the time of signup.
 
 **Figure 5: Page a new user sees.**
 
-**Figure 14: Page after editing editing profile and changing names and booking events.**
+**Figure 6: Page after editing editing profile and changing names and booking events.**
 
-**Figure 15:** Images showing edit user profile functionality.
+**Figure 7:** Images showing edit user profile functionality.
 
-**Figure 16:** Images showing a list of all available events.
+**Figure 8:** Images showing a list of all available events.
 
-**Figure 17:** Images showing a Dialogue box for payment confirmation for event booking.
+**Figure 9:** Images showing a Dialogue box for payment confirmation for event booking.
 
-**Figure 18:** Images showing search by event feature.
+**Figure 10:** Images showing search by event feature.
 
-**Figure 19:** Images showing filter by theme feature.
+**Figure 11:** Images showing filter by theme feature.
 
-## 3 Modules, Application UI, URLs and Backend Endpoints for Admin Module Features
+## 3. Admin Module Features (Backend Endpoints, URLs and Application UI)
 
 | **Module** | **Features** | **Backend Endpoint(s)** |
 |-------------|--------------------|--------------------------|
@@ -143,13 +135,12 @@ Email is the user email given during the time of signup.
 
 ### Frontend Functionalities
 
-**Create Event:** Admins use a form to enter event details such as name, theme, description, date, and capacity. React handles form submission and sends the data via POST requests to the backend.
-
-**Edit Event and Venue:** Event and venue details are editable using "Edit" buttons, dynamically updating fields based on admin input. Frontend sends PUT requests to backend endpoints to persist changes.
-
-**Revenue and Metrics Dashboard:** The admin dashboard calculates metrics like total revenue, average income, and availability percentage using React state variables and backend API responses. Filtering is implemented with search bars and checkboxes.
-
-**Attendee Tracking and Reminder:** Admins input event IDs to view attendee lists and booking details. Clicking "Send Reminder" triggers a modal confirmation window, where reminders are sent to attendees via email using backend logic.
+| **Feature**                    | **Details** |
+|---------------------------------|------------|
+| **Create Event** | - Admins use a form to enter event details such as name, theme, description, date, and capacity.<br>- React handles form submission and sends data via `POST` requests to the backend. |
+| **Edit Event and Venue** | - Event and venue details are editable using "Edit" buttons, dynamically updating fields based on admin input.<br>- Frontend sends `PUT` requests to backend endpoints to persist changes. |
+| **Revenue and Metrics Dashboard** | - The admin dashboard calculates metrics like total revenue, average income, and availability percentage using React state variables and backend API responses.<br>- Filtering is implemented with search bars and checkboxes. |
+| **Attendee Tracking and Reminder** | - Admins input event IDs to view attendee lists and booking details.<br>- Clicking "Send Reminder" triggers a modal confirmation window, where reminders are sent to attendees via email using backend logic. |
 
 ### Application URLs
 
@@ -162,350 +153,136 @@ Email is the user email given during the time of signup.
 ### Application UI
 
 
-**Figure 25:** Create Event Form.
+**Figure 12:** Create Event Form.
 
 
-**Figure 26:** Event list table.
+**Figure 13:** Event list table.
 
 
-**Figure 27:** Event form loaded with event data to be edited.
+**Figure 14:** Event form loaded with event data to be edited.
 
 
-**Figure 28:** Venue list table.
+**Figure 15:** Venue list table.
 
 
-**Figure 29:** Venue list table with edit venue form.
+**Figure 16:** Venue list table with edit venue form.
 
 
-**Figure 30:** Vendor Dashboard.
+**Figure 17:** Vendor Dashboard.
 
 
-**Figure 31:** Vendor Dashboard’s search event by name functionality.
+**Figure 18:** Vendor Dashboard’s search event by name functionality.
 
 
-**Figure 32:** Vendor Dashboard’s filter by theme functionality.
+**Figure 19:** Vendor Dashboard’s filter by theme functionality.
 
 
-**Figure 33:** Attendee management Tracker list.
+**Figure 20:** Attendee management Tracker list.
 
 
-**Figure 34:** Attendee management Tracker list’s email remainder dialogue box..
+**Figure 21:** Attendee management Tracker list’s email remainder dialogue box.
 
 ## SQLite Integration with Spring Boot
 
 SQLite integration with Spring Boot necessitated the implementation of custom dialects and entity mappings due to SQLite's limited compatibility with Spring's JPA. To handle this, the following steps were taken:
 
-**Custom Dialects:** A custom SQLite dialect was created to enable seamless communication between the Spring Boot application and the SQLite database, overcoming limitations in handling constraints and field types.
+### Backend Architecture
 
-**Service Layers:** Services such as EventService and BookedService were designed to fetch, process, and transform entity data into DTOs (Data Transfer Objects), facilitating efficient frontend communication via APIs.
-
-**Entity and Repository Management:** Entities were explicitly mapped to database tables using @EntityScan annotations. Repositories (EventRepository, BookedRepository) were implemented to encapsulate database operations like findAll, save, and update.
-
-**Frontend-Backend Communication:** React fetches parsed values from the Spring Boot backend running on <http://localhost:8080>. API responses are used to dynamically render metrics, attendee data, and venue details on the admin page.
+| **Feature** | **Details** |
+|------------|------------|
+| **Custom Dialects** | - A custom SQLite dialect was created to enable seamless communication between the Spring Boot application and the SQLite database.<br>- Overcomes limitations in handling constraints and field types. |
+| **Service Layers** | - Services such as `EventService` and `BookedService` fetch, process, and transform entity data into DTOs (Data Transfer Objects).<br>- Facilitates efficient frontend communication via APIs. |
+| **Entity and Repository Management** | - Entities were explicitly mapped to database tables using `@EntityScan` annotations.<br>- Repositories (`EventRepository`, `BookedRepository`) encapsulate database operations like `findAll`, `save`, and `update`. |
+| **Frontend-Backend Communication** | - React fetches parsed values from the Spring Boot backend running on `<http://localhost:8080>`.<br>- API responses dynamically render metrics, attendee data, and venue details on the admin page. |
 
 ## ER Diagram  
 
-### Tables and Their Attributes**
+### Tables and Their Attributes
 
-**Admin Table**
+### Database Schema
 
-- Id: Integer, primary key, auto-incremented. Unique identifier for each admin.
-- Email: Text, unique, not null. Stores the admin's email address.
-- Password: Text, not null. Stores the admin's password.
+| **Table Name**  | **Attribute**       | **Properties** |
+|----------------|--------------------|---------------|
+| **Admin**      | Id                 | Integer, primary key, auto-incremented. Unique identifier for each admin. |
+|                | Email              | Text, unique, not null. Stores the admin's email address. |
+|                | Password           | Text, not null. Stores the admin's password. |
+| **Users**      | Id                 | Integer, primary key, auto-incremented. Unique identifier for each user. |
+|                | Email              | Text, not null. Stores the user's email address. |
+|                | Password           | Text, not null. Stores the user's password. |
+|                | Username           | Text, default value `___`. Stores the user's display name. |
+| **Events**     | eventid            | Integer, primary key, auto-incremented. Unique identifier for each event. |
+|                | name               | Text, not null. Stores the name of the event. |
+|                | theme              | Text. Stores the theme of the event. |
+|                | description        | Text. Stores details about the event. |
+|                | max_capacity       | Integer, not null. Maximum attendees the event can accommodate. |
+|                | current_capacity   | Integer, default value 0. Tracks the current number of attendees. |
+|                | ticket_price       | Integer, not null. Stores the ticket price for the event. |
+|                | event_datetime     | Datetime, not null. Records the scheduled date and time for the event. |
+| **Booked**     | id                 | Integer, primary key, auto-incremented. Unique identifier for each booking. |
+|                | useremail_id       | Integer, foreign key referencing `Users.Id`, on delete cascade. Links the booking to the user who made it. |
+|                | event_booked       | Integer, foreign key referencing `Events.eventid`, on delete cascade. Links the booking to a specific event. |
+|                | tickets_booked     | Integer, not null, default value 1. Records the number of tickets booked. |
+|                | Email              | Text. Stores the email address associated with the booking. |
+| **Location**   | venueid            | Integer, primary key, auto-incremented. Unique identifier for each venue. |
+|                | event_name         | Varchar(255). Stores the name of the event hosted at the venue. |
+|                | event_theme        | Varchar(255). Stores the theme of the event hosted at the venue. |
+|                | venue_name         | Varchar(255), default value `'unassigned'`. Stores the venue name. |
+|                | event_datetime     | Datetime. Records the date and time of the event at the venue. |
+|                | longitude          | Real, default value `0.000000`. Geographical longitude of the venue. |
+|                | latitude           | Real, default value `0.000000`. Geographical latitude of the venue. |
+|                | eventid            | Integer, foreign key referencing `Events.eventid`. Links the venue to the event. |
 
-**Users Table**
+**Figure 22: ER Diagram of the application**
 
-- Id: Integer, primary key, auto-incremented. Unique identifier for each user.
-- Email: Text, not null. Stores the user's email address.
-- Password: Text, not null. Stores the user's password.
-- Username: Text, default value '\_**\_**\_'. Stores the user's display name.
+### Relationships and Logic
 
-**Events Table**
+### Relationship Logic and Usage
 
-- eventid: Integer, primary key, auto-incremented. Unique identifier for each event.
-- name: Text, not null. Stores the name of the event.
-- theme: Text. Stores the theme of the event.
-- description: Text. Stores details about the event.
-- max_capacity: Integer, not null. Maximum attendees the event can accommodate.
-- current_capacity: Integer, default value 0. Tracks the current number of attendees.
-- ticket_price: Integer, not null. Stores the ticket price for the event.
-- event_datetime: Datetime, not null. Records the scheduled date and time for the event.
+| **Relationship**        | **Logic** | **Usage** |
+|------------------------|---------|----------|
+| **Users → Booked (One-to-Many)** | - A user can book multiple events.<br>- Relationship established via `useremail_id` foreign key in `Booked`, referencing `Users.Id`. | - When a user books an event, a new entry is created in `Booked`, linking `useremail_id` and `event_booked`.<br>- Stores the number of tickets (`tickets_booked`) and associated email. |
+| **Events → Booked (One-to-Many)** | - An event can have multiple bookings.<br>- Relationship established via `event_booked` foreign key in `Booked`, referencing `Events.eventid`. | - When an event is booked, `current_capacity` in `Events` is updated.<br>- A new row is created in `Booked` linking the event's ID. |
+| **Events → Location (One-to-One)** | - Each event is assigned a specific venue.<br>- Relationship established via `eventid` foreign key in `Location`, referencing `Events.eventid`. | - The app associates each event with a venue.<br>- Venue details (name, coordinates, datetime) are stored in the `Location` table. |
 
-**Booked Table**
-
-- id: Integer, primary key, auto-incremented. Unique identifier for each booking.
-- useremail_id: Integer, foreign key referencing Users.Id, on delete cascade. Links the booking to the user who made it.
-- event_booked: Integer, foreign key referencing Events.eventid, on delete cascade. Links the booking to a specific event.
-- tickets_booked: Integer, not null, default value 1. Records the number of tickets booked.
-- Email: Text. Stores the email address associated with the booking.
-
-**Location Table**
-
-- venueid: Integer, primary key, auto-incremented. Unique identifier for each venue.
-- event_name: Varchar(255). Stores the name of the event hosted at the venue.
-- event_theme: Varchar(255). Stores the theme of the event hosted at the venue.
-- venue_name: Varchar(255), default value 'unassigned'. Stores the venue name.
-- event_datetime: Datetime. Records the date and time of the event at the venue.
-- longitude: Real, default value 0.000000. Geographical longitude of the venue.
-- latitude: Real, default value 0.000000. Geographical latitude of the venue.
-- eventid: Integer, foreign key referencing Events.eventid. Links the venue to the event.
-
-**Figure 35: ER Diagram of the application**
-
-### Relationships and Logic**
-
-- **Users → Booked (One-to-Many):**
-
-A user can book multiple events. The relationship is established via the useremail_id foreign key in the Booked table, which references the Id of the Users table.
-
-**Logic:** When a user makes a booking, the app creates a new entry in the Booked table linking the user's ID (useremail_id) and the event booked (event_booked). It also stores the number of tickets (tickets_booked) and the associated email address.
-
-- **Events → Booked (One-to-Many):**
-
-An event can have multiple bookings. The relationship is established via the event_booked foreign key in the Booked table, which references the eventid of the Events table.
-
-**Logic:** When an event is booked, the app updates the current_capacity in the Events table and creates a new row in the Booked table linking the event's ID.
-
-- **Events → Location (One-to-One):**
-
-Each event is assigned a specific venue. The relationship is established via the eventid foreign key in the Location table, which references the eventid of the Events table.
-
-**Logic:** The app associates each event with one venue, storing venue details like name, coordinates, and datetime in the Location table.
-
-Here's your entire documentation rewritten in a polished **Markdown format (`.md`)** with proper headings, bolding, inline code blocks, and numbered sections where appropriate. You can paste this into any `.md` file, such as a `README.md`.
 
 ## Flow Documentation
 
-### 1. User Flow
+### 1. User Interaction Flow
 
-#### 1.1 **User Signup**
+| **Feature** | **Action** | **Outcome** | **Endpoint** |
+|------------|-----------|------------|-------------|
+| **User Signup** | - User visits the signup page and fills in their email and password.<br>- Confirms the password to ensure accuracy. | - Backend validates input and checks for duplicate emails.<br>- Password is hashed using `BCrypt` and stored securely.<br>- User is redirected to the login page. | ```POST /api/auth/signup``` |
+| **User Login** | - User enters their email and password and submits the login form. | - Backend verifies credentials.<br>- On success, a JWT token is generated and stored.<br>- User is redirected to their personal dashboard. | ```POST /api/auth/login``` |
+| **Browsing Events** | - Users browse the event list on the main dashboard.<br>- Events can be filtered by **name** (search bar) or **theme** (checkboxes). | - Events are displayed with details: name, theme, description, datetime, venue, ticket price, availability. | ```GET /api/events``` |
+| **Booking an Event** | - User clicks on the "Book Event" button for a selected event.<br>- A confirmation popup appears to confirm booking. | - On confirmation, event is added to user’s "Confirmed Events".<br>- Multiple tickets can be booked. | ```POST /api/book-event``` |
+| **Viewing Booked Events** | - User navigates to their profile page. | - List of booked events is displayed with name, theme, date, venue, and number of tickets. | ```GET /api/booked-events/:email``` |
 
-- **Action:**
-  - The user visits the signup page and fills in their email and password.
-  - Confirms the password to ensure accuracy.
 
-- **Outcome:**
-  - Backend validates input and checks for duplicate emails.
-  - Password is hashed using `BCrypt` and stored securely.
-  - User is redirected to the login page.
+### 2. Admin Interaction Flow
 
-- **Technical Highlights:**
-  - Endpoint:  
-    ```bash
-    POST /api/auth/signup
-    ```
-
----
-
-#### 1.2 **User Login**
-
-- **Action:**
-  - The user enters their email and password and submits the login form.
-
-- **Outcome:**
-  - Backend verifies credentials.
-  - On success, a JWT token is generated and stored.
-  - User is redirected to their personal dashboard.
-
-- **Technical Highlights:**
-  - Endpoint:  
-    ```bash
-    POST /api/auth/login
-    ```
-
----
-
-#### 1.3 **Browsing Events**
-
-- **Action:**
-  - Users browse the event list on the main dashboard.
-  - Events can be filtered by **name** (search bar) or **theme** (checkboxes).
-
-- **Outcome:**
-  - Events are displayed with details: name, theme, description, datetime, venue, ticket price, availability.
-
-- **Technical Highlights:**
-  - Endpoint:  
-    ```bash
-    GET /api/events
-    ```
-
----
-
-#### 1.4 **Booking an Event**
-
-- **Action:**
-  - User clicks on the "Book Event" button for a selected event.
-  - A confirmation popup appears to confirm booking.
-
-- **Outcome:**
-  - On confirmation, event is added to user’s "Confirmed Events".
-  - Multiple tickets can be booked.
-
-- **Technical Highlights:**
-  - Endpoint:  
-    ```bash
-    POST /api/book-event
-    ```
-
----
-
-#### 1.5 **Viewing Booked Events**
-
-- **Action:**
-  - User navigates to their profile page.
-
-- **Outcome:**
-  - List of booked events is displayed with name, theme, date, venue, and number of tickets.
-
-- **Technical Highlights:**
-  - Endpoint:  
-    ```bash
-    GET /api/booked-events/:email
-    ```
-
----
-
-### 2. Admin Flow
-
-#### 2.1 **Admin Login**
-
-- **Action:**
-  - Admin provides credentials on login page.
-
-- **Outcome:**
-  - JWT token is generated upon successful login.
-  - Admin is redirected to the dashboard.
-
-- **Technical Highlights:**
-  - Endpoint:  
-    ```bash
-    POST /api/auth/admin-login
-    ```
-
----
-
-#### 2.2 **Creating New Events**
-
-- **Action:**
-  - Admin fills form to create event with name, description, theme, datetime, capacity, price.
-
-- **Outcome:**
-  - Event is saved and visible in both admin and user dashboards.
-
-- **Technical Highlights:**
-  - Endpoint:  
-    ```bash
-    POST /api/events
-    ```
-
----
-
-#### 2.3 **Editing Events**
-
-- **Action:**
-  - Admin clicks "Edit" beside an event and modifies details.
-
-- **Outcome:**
-  - Database is updated and UI reflects changes dynamically.
-
-- **Technical Highlights:**
-  - Endpoint:  
-    ```bash
-    PUT /api/events/:id
-    ```
-
----
-
-#### 2.4 **Venue Management**
-
-- **Action:**
-  - Admin assigns or edits venue details (place name and coordinates).
-
-- **Outcome:**
-  - Venue updates are reflected in the linked `Location` table.
-
-- **Technical Highlights:**
-  - Endpoint:  
-    ```bash
-    PUT /api/venues/:id
-    ```
-
----
-
-#### 2.5 **Vendor & Attendee Dashboard**
-
-- **Action:**
-  - Admin views revenue, ticket stats, capacity usage.
-  - Can search events and view attendee details.
-
-- **Outcome:**
-  - Metrics and attendee information are dynamically shown.
-  - Email reminders can be sent to attendees.
-
-- **Technical Highlights:**
-  - Fetch metrics:  
-    ```bash
-    GET /getevents
-    ```
-  - Fetch attendee list:  
-    ```bash
-    GET /getbooked
-    ```
-  - Email reminder logic is triggered via confirmation modal.
-
----
+| **Feature** | **Action** | **Outcome** | **Endpoint** |
+|------------|-----------|------------|-------------|
+| **Admin Login** | - Admin provides credentials on the login page. | - JWT token is generated upon successful login.<br>- Admin is redirected to the dashboard. | ```POST /api/auth/admin-login``` |
+| **Creating New Events** | - Admin fills a form to create an event with name, description, theme, datetime, capacity, and price. | - Event is saved and visible in both admin and user dashboards. | ```POST /api/events``` |
+| **Editing Events** | - Admin clicks "Edit" beside an event and modifies details. | - Database is updated and UI reflects changes dynamically. | ```PUT /api/events/:id``` |
+| **Venue Management** | - Admin assigns or edits venue details (place name and coordinates). | - Venue updates are reflected in the linked `Location` table. | ```PUT /api/venues/:id``` |
+| **Vendor & Attendee Dashboard** | - Admin views revenue, ticket stats, and capacity usage.<br>- Can search events and view attendee details. | - Metrics and attendee information are dynamically shown.<br>- Email reminders can be sent to attendees. | - Fetch metrics: ```GET /getevents```<br>- Fetch attendee list: ```GET /getbooked```<br>- Email reminder logic is triggered via confirmation modal. |
 
 ### 3. Dockerization
 
-#### 3.1 **Structure Overview**
+| **Service**       | **Purpose** | **Features** |
+|------------------|------------|-------------|
+| **ASP.NET Core (`asp`)** | Hosts ASP.NET backend. | - Uses `mcr.microsoft.com/dotnet/sdk` for build.<br>- Publishes to a lightweight runtime image.<br>- Exposes port `5274`. |
+| **React User Interface (`react`)** | Hosts the frontend user interface. | - Installs Node.js dependencies, copies source, sets environment.<br>- Exposes ports `5173` (frontend) and `3001` (backend). |
+| **React Admin Interface (`react-admin`)** | Admin-facing frontend. | - Exposes ports `5174` (frontend) and `3002` (backend). |
+| **Spring Boot Backend (`spring`)** | Hosts admin functionality. | - Uses Maven with SQLite integration.<br>- Exposes port `8080`. |
 
-Each service (ASP.NET, React, React Admin, Spring Boot) has its own `Dockerfile`.
+**Visual Overview**
 
----
-
-#### 3.2 **ASP.NET Core (`asp`)**
-
-- **Purpose:** Hosts ASP.NET backend.
-- **Features:**
-  - Uses `mcr.microsoft.com/dotnet/sdk` for build.
-  - Publishes to a lightweight runtime image.
-  - Exposes port `5274`.
-
----
-
-#### 3.3 **React User Interface (`react`)**
-
-- **Purpose:** Hosts the frontend user interface.
-- **Features:**
-  - Installs Node.js deps, copies source, sets env.
-  - Exposes ports `5173` (frontend), `3001` (backend).
-
----
-
-#### 3.4 **React Admin Interface (`react-admin`)**
-
-- **Purpose:** Admin-facing frontend.
-- **Features:**
-  - Exposes ports `5174` (frontend), `3002` (backend).
-
----
-
-#### 3.5 **Spring Boot Backend (`spring`)**
-
-- **Purpose:** Hosts admin functionality.
-- **Features:**
-  - Uses Maven with SQLite integration.
-  - Exposes port `8080`.
-
----
-
-#### 3.6 **Visual Overview**
-
-- **Figure 36:** Docker Compose build process.
-- **Figure 37:** Docker images after build (Docker UI).
-- **Figure 38:** Docker images after build (Terminal).
-- **Figure 39:** Running containers with port mappings.
+- **Figure 23:** Docker Compose build process.
+- **Figure 24:** Docker images after build (Docker UI).
+- **Figure 25:** Docker images after build (Terminal).
+- **Figure 26:** Running containers with port mappings.
 
 ---
 
