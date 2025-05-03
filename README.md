@@ -511,13 +511,6 @@ Each service (ASP.NET, React, React Admin, Spring Boot) has its own `Dockerfile`
 
 ## Application Deployment & Usage Guide
 
-**GitHub Repository**
-
-- Project is uploaded to GitHub with all `Dockerfile`s and `docker-compose.yml`.
-- Simplifies full setup and deployment.
-
----
-
 ### **Usage Option 1: Dockerized Deployment**
 
 - Navigate to the project root:
