@@ -34,6 +34,7 @@ This full-stack Event Management application is developed using ASP.NET, React, 
     - [**Usage Option 3: Hybrid Deployment**](#usage-option-3-hybrid-deployment)
 
 
+---
 
 ## Key Features
 
@@ -41,6 +42,8 @@ This full-stack Event Management application is developed using ASP.NET, React, 
 - Optimized Attendee Management: It includes features to handle registrations, guest lists, and automated communication for reminders and updates, ensuring efficient attendee handling.
 - Advanced Budget Tracking: The system allows for real-time budget monitoring, expense management, and easy generation of comprehensive financial reports
 - Enhanced Customer Engagement: Through its intuitive interface, customers can effortlessly browse event details, make bookings, and stay updated with personalized notifications
+
+---
 
 ## Tech Stack Used
 
@@ -89,13 +92,16 @@ This application consists of three modules, including the module for user login 
 
 ### Application UI
 
-
+![](Images/1.1.png)
 **Figure 1: Initial page on opening the application**
 
+![](Images/1.2.png)
 **Figure 2: User Signup**
 
+![](Images/1.3.png)
 **Figure 3: User Login**  
 
+![](Images/1.4.png)
 **Figure 4: Admin login**  
 
 ---
@@ -221,6 +227,8 @@ Email is the user email given during the time of signup.
 
 **Figure 21:** Attendee management Tracker list’s email remainder dialogue box.
 
+---
+
 ## SQLite Integration with Spring Boot 
 
 SQLite integration with Spring Boot necessitated the implementation of custom dialects and entity mappings due to SQLite's limited compatibility with Spring's JPA. To handle this, the following steps were taken:
@@ -232,6 +240,8 @@ SQLite integration with Spring Boot necessitated the implementation of custom di
 | **Service Layers** | - Services such as `EventService` and `BookedService` fetch, process, and transform entity data into DTOs (Data Transfer Objects).<br>- Facilitates efficient frontend communication via APIs. |
 | **Entity and Repository Management** | - Entities were explicitly mapped to database tables using `@EntityScan` annotations.<br>- Repositories (`EventRepository`, `BookedRepository`) encapsulate database operations like `findAll`, `save`, and `update`. |
 | **Frontend-Backend Communication** | - React fetches parsed values from the Spring Boot backend running on `<http://localhost:8080>`.<br>- API responses dynamically render metrics, attendee data, and venue details on the admin page. |
+
+---
 
 ## ER Diagram  
 
@@ -279,6 +289,7 @@ SQLite integration with Spring Boot necessitated the implementation of custom di
 | **Events → Booked (One-to-Many)** | - An event can have multiple bookings.<br>- Relationship established via `event_booked` foreign key in `Booked`, referencing `Events.eventid`. | - When an event is booked, `current_capacity` in `Events` is updated.<br>- A new row is created in `Booked` linking the event's ID. |
 | **Events → Location (One-to-One)** | - Each event is assigned a specific venue.<br>- Relationship established via `eventid` foreign key in `Location`, referencing `Events.eventid`. | - The app associates each event with a venue.<br>- Venue details (name, coordinates, datetime) are stored in the `Location` table. |
 
+---
 
 ## Flow Documentation
 
@@ -302,6 +313,8 @@ SQLite integration with Spring Boot necessitated the implementation of custom di
 | **Editing Events** | - Admin clicks "Edit" beside an event and modifies details. | - Database is updated and UI reflects changes dynamically. | ```PUT /api/events/:id``` |
 | **Venue Management** | - Admin assigns or edits venue details (place name and coordinates). | - Venue updates are reflected in the linked `Location` table. | ```PUT /api/venues/:id``` |
 | **Vendor & Attendee Dashboard** | - Admin views revenue, ticket stats, and capacity usage.<br>- Can search events and view attendee details. | - Metrics and attendee information are dynamically shown.<br>- Email reminders can be sent to attendees. | - Fetch metrics: ```GET /getevents```<br>- Fetch attendee list: ```GET /getbooked```<br>- Email reminder logic is triggered via confirmation modal. |
+
+---
 
 ## Dockerization
 
