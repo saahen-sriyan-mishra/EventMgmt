@@ -2,8 +2,10 @@
 
 This full-stack Event Management application is developed using ASP.NET, React, Node.js, and Spring Boot, codded in C#, JavaScript, and Java.
 
+## Table Of Content
 - [Full-stack Event Management application](#full-stack-event-management-application)
-  - [Key Features:](#key-features)
+  - [Table Of Content](#table-of-content)
+  - [Key Features](#key-features)
   - [Tech Stack Used](#tech-stack-used)
   - [1. Sign-up and Login Module (Backend Endpoints, URLs and Application UI)](#1-sign-up-and-login-module-backend-endpoints-urls-and-application-ui)
     - [Technical Highlights](#technical-highlights)
@@ -19,12 +21,9 @@ This full-stack Event Management application is developed using ASP.NET, React, 
     - [Application URLs](#application-urls-2)
     - [Application UI](#application-ui-2)
   - [SQLite Integration with Spring Boot](#sqlite-integration-with-spring-boot)
-    - [Backend Architecture](#backend-architecture)
   - [ER Diagram](#er-diagram)
-    - [Tables and Their Attributes](#tables-and-their-attributes)
     - [Database Schema](#database-schema)
-    - [Relationships and Logic](#relationships-and-logic)
-    - [Relationship Logic and Usage](#relationship-logic-and-usage)
+    - [Relationship, Logic and Usage](#relationship-logic-and-usage)
   - [Flow Documentation](#flow-documentation)
     - [1. User Interaction Flow](#1-user-interaction-flow)
     - [2. Admin Interaction Flow](#2-admin-interaction-flow)
@@ -35,7 +34,8 @@ This full-stack Event Management application is developed using ASP.NET, React, 
     - [**Usage Option 3: Hybrid Deployment**](#usage-option-3-hybrid-deployment)
 
 
-## Key Features:
+
+## Key Features
 
 - Streamlined Event Scheduling: The application automates scheduling, integrating vendor bookings, venue management, and notifications into a cohesive workflow
 - Optimized Attendee Management: It includes features to handle registrations, guest lists, and automated communication for reminders and updates, ensuring efficient attendee handling.
@@ -54,6 +54,10 @@ This application consists of three modules, including the module for user login 
 | Authentication  | JWT with BCrypt hashing  |
 
  
+
+---
+
+
 ## 1. Sign-up and Login Module (Backend Endpoints, URLs and Application UI)
 
 | **Module**            | **Features**                                                                                                                                                                                                                      | **Backend Endpoints**                                                                                                                                                                                                                                                                                                                                                             |
@@ -94,6 +98,7 @@ This application consists of three modules, including the module for user login 
 
 **Figure 4: Admin login**  
 
+---
 
 ## 2. User Module Features  (Backend Endpoints, URLs and Application UI)
 
@@ -156,6 +161,8 @@ Email is the user email given during the time of signup.
 
 **Figure 11:** Images showing filter by theme feature.
 
+---
+
 ## 3. Admin Module Features (Backend Endpoints, URLs and Application UI)
 
 | **Module** | **Features** | **Backend Endpoint(s)** |
@@ -214,11 +221,10 @@ Email is the user email given during the time of signup.
 
 **Figure 21:** Attendee management Tracker list’s email remainder dialogue box.
 
-## SQLite Integration with Spring Boot
+## SQLite Integration with Spring Boot 
 
 SQLite integration with Spring Boot necessitated the implementation of custom dialects and entity mappings due to SQLite's limited compatibility with Spring's JPA. To handle this, the following steps were taken:
 
-### Backend Architecture
 
 | **Feature** | **Details** |
 |------------|------------|
@@ -228,8 +234,6 @@ SQLite integration with Spring Boot necessitated the implementation of custom di
 | **Frontend-Backend Communication** | - React fetches parsed values from the Spring Boot backend running on `<http://localhost:8080>`.<br>- API responses dynamically render metrics, attendee data, and venue details on the admin page. |
 
 ## ER Diagram  
-
-### Tables and Their Attributes
 
 ### Database Schema
 
@@ -266,9 +270,8 @@ SQLite integration with Spring Boot necessitated the implementation of custom di
 
 **Figure 22: ER Diagram of the application**
 
-### Relationships and Logic
 
-### Relationship Logic and Usage
+### Relationship, Logic and Usage
 
 | **Relationship**        | **Logic** | **Usage** |
 |------------------------|---------|----------|
