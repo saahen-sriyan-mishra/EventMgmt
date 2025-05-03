@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kPBLYvzqoa8=",
+  "dgSpecHash": "BEYAe4LcRAc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\KIIT\\Desktop\\EventMgmt\\ASP\\ASP.csproj",
+  "projectFilePath": "C:\\Users\\KIIT\\Desktop\\Self-Projects (43)\\FULL STACK (3)\\EventMgmt\\ASP\\ASP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KIIT\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\KIIT\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

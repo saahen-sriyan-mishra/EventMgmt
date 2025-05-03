@@ -5056,11 +5056,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KIIT\\Desktop\\EventMgmt\\ASP\\ASP.csproj",
+      "projectUniqueName": "C:\\Users\\KIIT\\Desktop\\Self-Projects (43)\\FULL STACK (3)\\EventMgmt\\ASP\\ASP.csproj",
       "projectName": "ASP",
-      "projectPath": "C:\\Users\\KIIT\\Desktop\\EventMgmt\\ASP\\ASP.csproj",
+      "projectPath": "C:\\Users\\KIIT\\Desktop\\Self-Projects (43)\\FULL STACK (3)\\EventMgmt\\ASP\\ASP.csproj",
       "packagesPath": "C:\\Users\\KIIT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KIIT\\Desktop\\EventMgmt\\ASP\\obj\\",
+      "outputPath": "C:\\Users\\KIIT\\Desktop\\Self-Projects (43)\\FULL STACK (3)\\EventMgmt\\ASP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
